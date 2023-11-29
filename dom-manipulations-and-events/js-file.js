@@ -23,3 +23,12 @@ pTag.textContent = "ME TOO!";
 pinkDiv.appendChild(h1Tag);
 pinkDiv.appendChild(pTag);
 container.appendChild(pinkDiv);
+
+
+// Events...
+const method2Btn = document.querySelector('#method2Btn');
+method2Btn.onclick = () => alert('Set properties of form onclick on the DOM nodes in your JavaScript');
+const method3Btn = document.querySelector('#method3Btn');
+method3Btn.addEventListener('click', () => {
+    alert('Attach event listeners to the DOM nodes in your JavaScript');
+})
