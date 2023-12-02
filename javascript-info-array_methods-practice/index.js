@@ -24,13 +24,19 @@
 // Task 3: Filter range "in place"
 // Write a function filterRangeInPlace(arr, a, b) that gets an array arr and removes from it all values except those that are between a and b. The test is: a ≤ arr[i] ≤ b.
 // The function should only modify the array. It should not return anything.
-function filterRangeInPlace(arr, a, b) {
-    arr.forEach((item, index, array) => {
-        if (!(item >= a && item <= b)) 
-            array.splice(index, 1);
-    })
-}
-const arr = [5, 3, 8, 1]
+// function filterRangeInPlace(arr, a, b) {
+//     arr.forEach((item, index, array) => {
+//         if (!(item >= a && item <= b)) 
+//             array.splice(index, 1);
+//     })
+// }
+// const arr = [5, 3, 8, 1]
+// console.log(arr);
+// filterRangeInPlace(arr, 1, 4);
+// console.log(arr);
+
+// Task 4: Sort in decreasing order
+const arr = [5, 2, 1, -10, 8];
 console.log(arr);
-filterRangeInPlace(arr, 1, 4);
+arr.sort((a, b) => b - a);
 console.log(arr);
