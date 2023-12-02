@@ -42,12 +42,46 @@
 // console.log(arr);
 
 // Task 5: copy and sort array
-function copySorted(arr) {
-    return [...arr].sort();
+// function copySorted(arr) {
+//     return [...arr].sort();
+// }
+// const arr = ["HTML", "JavaScript", "CSS"];
+// console.log(arr);
+// console.log(copySorted(arr))
+// console.log(arr);
+
+// Task 6: Create an extendable calculator
+// Part 1 : First, implement the method calculate(str) that takes a string 
+    // like "1 + 2" in the format “NUMBER operator NUMBER” (space-delimited) 
+    // and returns the result. Should understand plus + and minus -.
+// Part 2:
+    // Then add the method addMethod(name, func) that teaches the calculator a 
+    // new operation. It takes the operator name and the two-argument function 
+    // func(a,b) that implements it.
+class Calculator {
+    constructor() {
+        this.methods = {
+            "+": (a, b) => a + b,
+            "-": (a, b) => a - b,
+        }
+    }
+    calculate(str) {
+        const arr = str.split(' ');
+        const operand1 = Number(arr[0]);
+        const operand2 = Number(arr[2]);
+        const operator = arr[1];
+       return this.methods[operator](operand1, operand2);
+    }
+    addMethod(name, func) {
+        this.methods[name] = func
+    }
 }
-const arr = ["HTML", "JavaScript", "CSS"];
-console.log(arr);
-console.log(copySorted(arr))
-console.log(arr);
-
-
+const calc = new Calculator();
+console.log(calc.calculate("3 + 7"));
+console.log(calc.calculate("3 - 7"));
+const powerCalc = new Calculator;
+powerCalc.addMethod("*", (a, b) => a * b);
+powerCalc.addMethod("/", (a, b) => a / b);
+powerCalc.addMethod("**", (a, b) => a ** b);
+const result = powerCalc.calculate("2 ** 3");
+console.log( result ); // 8 
