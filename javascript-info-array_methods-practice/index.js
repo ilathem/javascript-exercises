@@ -36,7 +36,18 @@
 // console.log(arr);
 
 // Task 4: Sort in decreasing order
-const arr = [5, 2, 1, -10, 8];
+// const arr = [5, 2, 1, -10, 8];
+// console.log(arr);
+// arr.sort((a, b) => b - a);
+// console.log(arr);
+
+// Task 5: copy and sort array
+function copySorted(arr) {
+    return [...arr].sort();
+}
+const arr = ["HTML", "JavaScript", "CSS"];
 console.log(arr);
-arr.sort((a, b) => b - a);
+console.log(copySorted(arr))
 console.log(arr);
+
+
