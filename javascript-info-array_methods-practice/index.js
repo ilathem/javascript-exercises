@@ -58,30 +58,42 @@
     // Then add the method addMethod(name, func) that teaches the calculator a 
     // new operation. It takes the operator name and the two-argument function 
     // func(a,b) that implements it.
-class Calculator {
-    constructor() {
-        this.methods = {
-            "+": (a, b) => a + b,
-            "-": (a, b) => a - b,
-        }
-    }
-    calculate(str) {
-        const arr = str.split(' ');
-        const operand1 = Number(arr[0]);
-        const operand2 = Number(arr[2]);
-        const operator = arr[1];
-       return this.methods[operator](operand1, operand2);
-    }
-    addMethod(name, func) {
-        this.methods[name] = func
-    }
-}
-const calc = new Calculator();
-console.log(calc.calculate("3 + 7"));
-console.log(calc.calculate("3 - 7"));
-const powerCalc = new Calculator;
-powerCalc.addMethod("*", (a, b) => a * b);
-powerCalc.addMethod("/", (a, b) => a / b);
-powerCalc.addMethod("**", (a, b) => a ** b);
-const result = powerCalc.calculate("2 ** 3");
-console.log( result ); // 8 
+// class Calculator {
+//     constructor() {
+//         this.methods = {
+//             "+": (a, b) => a + b,
+//             "-": (a, b) => a - b,
+//         }
+//     }
+//     calculate(str) {
+//         const arr = str.split(' ');
+//         const operand1 = Number(arr[0]);
+//         const operand2 = Number(arr[2]);
+//         const operator = arr[1];
+//        return this.methods[operator](operand1, operand2);
+//     }
+//     addMethod(name, func) {
+//         this.methods[name] = func
+//     }
+// }
+// const calc = new Calculator();
+// console.log(calc.calculate("3 + 7"));
+// console.log(calc.calculate("3 - 7"));
+// const powerCalc = new Calculator;
+// powerCalc.addMethod("*", (a, b) => a * b);
+// powerCalc.addMethod("/", (a, b) => a / b);
+// powerCalc.addMethod("**", (a, b) => a ** b);
+// const result = powerCalc.calculate("2 ** 3");
+// console.log( result ); // 8 
+
+// Task 7: Map to names
+// You have an array of user objects, each one has a user.name. Write the code
+// that converts it into an array of names.
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [ john, pete, mary ];
+
+let names = users.map(user => user.name);
+console.log( names ); // John, Pete, Mary
