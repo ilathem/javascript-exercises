@@ -89,11 +89,35 @@
 // Task 7: Map to names
 // You have an array of user objects, each one has a user.name. Write the code
 // that converts it into an array of names.
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 28 };
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+// 
+// let users = [ john, pete, mary ];
+// 
+// let names = users.map(user => user.name);
+// console.log( names ); // John, Pete, Mary
 
-let users = [ john, pete, mary ];
-
-let names = users.map(user => user.name);
-console.log( names ); // John, Pete, Mary
+// Task 8: Map to objects
+// You have an array of user objects, each one has name, surname and id.
+// Write the code to create another array from it, of objects with id and 
+// fullName, where fullName is generated from name and surname.
+const john = { name: "John", surname: "Smith", id: 1 };
+const pete = { name: "Pete", surname: "Hunt", id: 2 };
+const mary = { name: "Mary", surname: "Key", id: 3 };
+const users = [ john, pete, mary ];
+const usersMapped = users.map(user => 
+    { return {
+        fullName: `${user.name} ${user.surname}`,
+        id: user.id
+    }})
+/*
+usersMapped = [
+  { fullName: "John Smith", id: 1 },
+  { fullName: "Pete Hunt", id: 2 },
+  { fullName: "Mary Key", id: 3 }
+]
+*/
+console.table(usersMapped);
+console.log( usersMapped[0].id ) // 1
+console.log( usersMapped[0].fullName ) // John Smith
