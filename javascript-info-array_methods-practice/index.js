@@ -127,24 +127,24 @@
 // Write the function shuffle(array) that shuffles (randomly reorders) 
 // elements of the array.
 // Multiple runs of shuffle may lead to different orders of elements. 
-function shuffle(array) {
-    let usedIndices = [];
-    const shuffledArray = [];
-    array.forEach((value) => {
-        let newIndex = Math.floor(Math.random() * (array.length));
-        while (usedIndices.includes(newIndex)) {
-            newIndex = Math.floor(Math.random() * (array.length));
-        }
-        shuffledArray[newIndex] = value;
-        usedIndices.push(newIndex);
-    })
-    return shuffledArray;
-}
-// For instance:
-let arr = [1, 2, 3];
-console.log(shuffle(arr));
-console.log(shuffle(arr));
-console.log(shuffle(arr));
+// function shuffle(array) {
+//     let usedIndices = [];
+//     const shuffledArray = [];
+//     array.forEach((value) => {
+//         let newIndex = Math.floor(Math.random() * (array.length));
+//         while (usedIndices.includes(newIndex)) {
+//             newIndex = Math.floor(Math.random() * (array.length));
+//         }
+//         shuffledArray[newIndex] = value;
+//         usedIndices.push(newIndex);
+//     })
+//     return shuffledArray;
+// }
+// // For instance:
+// let arr = [1, 2, 3];
+// console.log(shuffle(arr));
+// console.log(shuffle(arr));
+// console.log(shuffle(arr));
 // arr = [3, 2, 1]
 // shuffle(arr);
 // arr = [2, 1, 3]
@@ -159,13 +159,17 @@ console.log(shuffle(arr));
 // 
 // For instance:
 // 
-// let john = { name: "John", age: 25 };
-// let pete = { name: "Pete", age: 30 };
-// let mary = { name: "Mary", age: 29 };
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 29 };
+
+let arr = [ john, pete, mary ];
+function getAverageAge(arr) {
+    const total = arr.reduce((acc, cur) => acc + cur.age, 0)
+    return total / arr.length;
+}
 // 
-// let arr = [ john, pete, mary ];
-// 
-// alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
 
 // Task 11: Filter unique array members
 // Let arr be an array.
