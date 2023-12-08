@@ -127,9 +127,24 @@
 // Write the function shuffle(array) that shuffles (randomly reorders) 
 // elements of the array.
 // Multiple runs of shuffle may lead to different orders of elements. 
+function shuffle(array) {
+    let usedIndices = [];
+    const shuffledArray = [];
+    array.forEach((value) => {
+        let newIndex = Math.floor(Math.random() * (array.length));
+        while (usedIndices.includes(newIndex)) {
+            newIndex = Math.floor(Math.random() * (array.length));
+        }
+        shuffledArray[newIndex] = value;
+        usedIndices.push(newIndex);
+    })
+    return shuffledArray;
+}
 // For instance:
-// let arr = [1, 2, 3];
-// shuffle(arr);
+let arr = [1, 2, 3];
+console.log(shuffle(arr));
+console.log(shuffle(arr));
+console.log(shuffle(arr));
 // arr = [3, 2, 1]
 // shuffle(arr);
 // arr = [2, 1, 3]
