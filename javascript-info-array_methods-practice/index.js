@@ -159,17 +159,17 @@
 // 
 // For instance:
 // 
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 29 };
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
 
-let arr = [ john, pete, mary ];
-function getAverageAge(arr) {
-    const total = arr.reduce((acc, cur) => acc + cur.age, 0)
-    return total / arr.length;
-}
+// let arr = [ john, pete, mary ];
+// function getAverageAge(arr) {
+//     const total = arr.reduce((acc, cur) => acc + cur.age, 0)
+//     return total / arr.length;
+// }
 // 
-alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+// alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
 
 // Task 11: Filter unique array members
 // Let arr be an array.
@@ -178,15 +178,21 @@ alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
 // 
 // For instance:
 // 
-// function unique(arr) {
-//   /* your code */
-// }
+function unique(arr) {
+    uniqueArray = [];
+    arr.forEach((value) => {
+        if (!uniqueArray.includes(value)) {
+            uniqueArray.push(value);
+        }
+    })
+    return uniqueArray;
+}
 // 
-// let strings = ["Hare", "Krishna", "Hare", "Krishna",
-//   "Krishna", "Krishna", "Hare", "Hare", ":-O"
-// ];
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
 // 
-// alert( unique(strings) ); // Hare, Krishna, :-O
+alert( unique(strings) ); // Hare, Krishna, :-O
 
 // Task 11: Create keyed object from array
 // Let’s say we received an array of users in the form {id:..., name:..., age:... }.
